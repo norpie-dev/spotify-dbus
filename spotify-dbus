@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[[ "$#" -ne 1 ]] && exit 1 && echo "spotifyctl [play/playpause/pause/next/previous]"
+
+[[ "$1" = "play" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play
+[[ "$1" = "playpause" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+[[ "$1" = "pause" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
+[[ "$1" = "next" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+[[ "$1" = "previous" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
