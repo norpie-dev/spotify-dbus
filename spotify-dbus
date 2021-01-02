@@ -2,6 +2,8 @@
 
 [[ "$#" -ne 1 ]] && exit 1 && echo "spotify-dbus [play/playpause/pause/next/previous]"
 
+alias send-to-active-dbus=
+
 [[ "$1" = "play" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play
 [[ "$1" = "playpause" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 [[ "$1" = "pause" ]] && dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
